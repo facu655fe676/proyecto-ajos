@@ -1,0 +1,56 @@
+export const productos = [
+  {
+    id: 'ajo-blanco',
+    variant: 1,
+    es: 'Ajo Blanco', en: 'White Garlic',
+    resumenEs: 'Calibres 3 a 7, mallas de 500g a 10kg y cajas de exportación.',
+    resumenEn: 'Sizes 3 to 7, 500g to 10kg mesh bags and export cartons.',
+    ficha: [
+      { es: 'Variedades', en: 'Varieties', valEs: 'Rubí INTA, Rosado Paisano', valEn: 'Rubí INTA, Rosado Paisano' },
+      { es: 'Siembra', en: 'Planting', valEs: 'Abril – Mayo', valEn: 'April – May' },
+      { es: 'Cosecha', en: 'Harvest', valEs: 'Noviembre – Enero', valEn: 'November – January' },
+      { es: 'Calibres', en: 'Sizes', valEs: 'N.º 3 – N.º 7', valEn: 'No. 3 – No. 7' },
+      { es: 'Embalajes', en: 'Packaging', valEs: 'Mallas 500g/1kg/5kg, cajas 10kg', valEn: '500g/1kg/5kg mesh bags, 10kg cartons' },
+      { es: 'Certificación', en: 'Certification', valEs: 'GlobalG.A.P. (n.º a incorporar)', valEn: 'GlobalG.A.P. (number to be added)' },
+    ],
+  },
+  {
+    id: 'ajo-colorado',
+    variant: 2,
+    es: 'Ajo Colorado', en: 'Red Garlic',
+    resumenEs: 'Variedad de alto rendimiento, ideal para mercados que priorizan sabor intenso.',
+    resumenEn: 'High-yield variety, ideal for markets that prioritize intense flavor.',
+    ficha: [
+      { es: 'Variedad', en: 'Variety', valEs: 'Colorado INTA', valEn: 'Colorado INTA' },
+      { es: 'Siembra', en: 'Planting', valEs: 'Marzo – Abril', valEn: 'March – April' },
+      { es: 'Cosecha', en: 'Harvest', valEs: 'Noviembre – Diciembre', valEn: 'November – December' },
+      { es: 'Calibres', en: 'Sizes', valEs: 'N.º 4 – N.º 7', valEn: 'No. 4 – No. 7' },
+      { es: 'Embalajes', en: 'Packaging', valEs: 'Mallas 500g/1kg, cajas 10kg', valEn: '500g/1kg mesh bags, 10kg cartons' },
+      { es: 'Certificación', en: 'Certification', valEs: 'GlobalG.A.P. (n.º a incorporar)', valEn: 'GlobalG.A.P. (number to be added)' },
+    ],
+  },
+  {
+    id: 'cebolla',
+    variant: 3,
+    es: 'Cebolla', en: 'Onion',
+    resumenEs: 'Blanca, roja y amarilla, disponibles según temporada.',
+    resumenEn: 'White, red and yellow, available depending on the season.',
+    ficha: [
+      { es: 'Variedades', en: 'Varieties', valEs: 'Blanca, Roja, Amarilla', valEn: 'White, Red, Yellow' },
+      { es: 'Disponibilidad', en: 'Availability', valEs: 'Noviembre – Mayo', valEn: 'November – May' },
+      { es: 'Embalajes', en: 'Packaging', valEs: 'Mallas 10kg/20kg', valEn: '10kg/20kg mesh bags' },
+    ],
+  },
+  {
+    id: 'zapallo',
+    variant: 4,
+    es: 'Zapallo', en: 'Squash',
+    resumenEs: 'Variedad Anco/Butternut, disponible en temporada.',
+    resumenEn: 'Butternut variety, available in season.',
+    ficha: [
+      { es: 'Variedad', en: 'Variety', valEs: 'Anco / Butternut', valEn: 'Anco / Butternut' },
+      { es: 'Disponibilidad', en: 'Availability', valEs: 'Mayo – Octubre', valEn: 'May – October' },
+      { es: 'Embalajes', en: 'Packaging', valEs: 'Bins y cajas a granel', valEn: 'Bins and bulk cartons' },
+    ],
+  },
+]

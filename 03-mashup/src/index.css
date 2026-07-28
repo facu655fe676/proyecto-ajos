@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --font-titulo: 'Fraunces', Georgia, serif;
+  --font-texto: 'Poppins', 'Segoe UI', sans-serif;
+  --color-carbon-950: #14120f;
+  --color-carbon-900: #1c1916;
+  --color-carbon-800: #262019;
+  --color-hueso-100: #f4ede0;
+  --color-hueso-200: #e9dfc9;
+  --color-ambar-500: #e0a339;
+  --color-ambar-400: #edb85c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-texto);
+  background: var(--color-hueso-100);
+  color: #1c1916;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-titulo);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
