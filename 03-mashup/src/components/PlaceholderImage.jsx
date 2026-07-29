@@ -8,16 +8,36 @@ const gradientes = {
   4: 'from-[#6b4a2c] to-[#1c1916]',
 }
 
-export default function PlaceholderImage({ variant = 1, labelEs, labelEn, className = '', fill = false }) {
+export default function PlaceholderImage({
+  variant = 1,
+  src,
+  alt,
+  labelEs,
+  labelEn,
+  className = '',
+  fill = false,
+}) {
   const { t } = useLanguage()
   const posicion = fill ? 'absolute inset-0' : 'relative'
   return (
     <div className={`${posicion} flex items-end overflow-hidden bg-gradient-to-br ${gradientes[variant]} ${className}`}>
-      <div className="absolute inset-0 bg-[repeating-linear-gradient(135deg,rgba(255,255,255,.04)_0px,rgba(255,255,255,.04)_2px,transparent_2px,transparent_26px)]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/5 to-black/60" />
-      <span className="relative z-10 text-hueso-100 text-[0.7rem] tracking-[0.12em] uppercase px-4 py-3 opacity-85">
-        {t(labelEs, labelEn)}
-      </span>
+      {src ? (
+        <img
+          src={src}
+          alt={alt ?? t(labelEs, labelEn) ?? ''}
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      ) : (
+        <div className="absolute inset-0 bg-[repeating-linear-gradient(135deg,rgba(255,255,255,.04)_0px,rgba(255,255,255,.04)_2px,transparent_2px,transparent_26px)]" />
+      )}
+      {/* Velo para legibilidad y para integrar con la paleta oscura */}
+      <div className={`absolute inset-0 bg-gradient-to-b ${src ? 'from-black/10 to-black/45' : 'from-black/5 to-black/60'}`} />
+      {!src && (
+        <span className="relative z-10 text-hueso-100 text-[0.7rem] tracking-[0.12em] uppercase px-4 py-3 opacity-85">
+          {t(labelEs, labelEn)}
+        </span>
+      )}
     </div>
   )
 }

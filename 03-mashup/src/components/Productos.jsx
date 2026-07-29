@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import PlaceholderImage from './PlaceholderImage.jsx'
+import { IMG } from '../images.js'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 const reveal = {
@@ -9,19 +10,19 @@ const reveal = {
 
 const productos = [
   {
-    variant: 1,
+    variant: 1, img: IMG.ajoBlanco,
     es: 'Ajo Blanco', en: 'White Garlic',
     descEs: 'Calibres 3 a 7, mallas y cajas de exportación. Nuestra línea de mayor volumen.',
     descEn: 'Sizes 3 to 7, mesh bags and export cartons. Our highest-volume line.',
   },
   {
-    variant: 2,
+    variant: 2, img: IMG.ajoColorado,
     es: 'Ajo Colorado', en: 'Red Garlic',
     descEs: 'Alto contenido de alicina, sabor intenso, ideal para mercados exigentes.',
     descEn: 'High allicin content, intense flavor, ideal for demanding markets.',
   },
   {
-    variant: 3,
+    variant: 3, img: IMG.ajoBoutique,
     es: 'Selección Boutique', en: 'Boutique Selection',
     descEs: 'Lotes limitados, calibres superiores y empaque diferenciado.',
     descEn: 'Limited lots, superior sizing, and distinctive packaging.',
@@ -45,7 +46,7 @@ export default function Productos() {
               initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={reveal}
               className={`grid md:grid-cols-2 gap-10 items-center ${i % 2 === 1 ? 'md:[&>*:first-child]:order-2' : ''}`}
             >
-              <PlaceholderImage variant={p.variant} labelEs={`FOTO: ${p.es.toLowerCase()}`} labelEn={`PHOTO: ${p.en.toLowerCase()}`} className="h-80" />
+              <PlaceholderImage variant={p.variant} src={p.img} alt={p.es} className="h-80 rounded-xl" />
               <div>
                 <h3 className="text-2xl md:text-3xl text-hueso-100 mb-4">{t(p.es, p.en)}</h3>
                 <p className="text-hueso-100/65 max-w-md">{t(p.descEs, p.descEn)}</p>

@@ -1,26 +1,30 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { LanguageProvider } from './i18n/LanguageContext.jsx'
-import ScrollProgress from './components/ScrollProgress.jsx'
-import Header from './components/Header.jsx'
-import Hero from './components/Hero.jsx'
-import Stats from './components/Stats.jsx'
-import Proceso from './components/Proceso.jsx'
-import Productos from './components/Productos.jsx'
-import Testimonios from './components/Testimonios.jsx'
-import Contacto from './components/Contacto.jsx'
-import Footer from './components/Footer.jsx'
+import Layout from './components/Layout.jsx'
+import Home from './pages/Home.jsx'
+import QuienesSomos from './pages/QuienesSomos.jsx'
+import Ajos from './pages/Ajos.jsx'
+import SeleccionBoutique from './pages/SeleccionBoutique.jsx'
+import OtrosProductos from './pages/OtrosProductos.jsx'
+import Contacto from './pages/Contacto.jsx'
+import NoEncontrada from './pages/NoEncontrada.jsx'
 
 function App() {
   return (
     <LanguageProvider>
-      <ScrollProgress />
-      <Header />
-      <Hero />
-      <Stats />
-      <Proceso />
-      <Productos />
-      <Testimonios />
-      <Contacto />
-      <Footer />
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/quienes-somos" element={<QuienesSomos />} />
+            <Route path="/ajos" element={<Ajos />} />
+            <Route path="/seleccion-boutique" element={<SeleccionBoutique />} />
+            <Route path="/otros-productos" element={<OtrosProductos />} />
+            <Route path="/contacto" element={<Contacto />} />
+            <Route path="*" element={<NoEncontrada />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </LanguageProvider>
   )
 }
