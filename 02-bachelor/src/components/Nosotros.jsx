@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import PlaceholderImage from './PlaceholderImage.jsx'
+import { IMG } from '../images.js'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 const reveal = {
@@ -11,7 +12,7 @@ function Cifra({ meta, es, en }) {
   const { t } = useLanguage()
   return (
     <div className="border-t border-black/15 pt-3.5">
-      <div className="font-titulo text-3xl text-terracota-500">{meta}</div>
+      <div className="font-titulo text-3xl text-ambar-500">{meta}</div>
       <div className="text-xs text-neutral-600">{t(es, en)}</div>
     </div>
   )
@@ -23,11 +24,11 @@ export default function Nosotros() {
     <section id="empresa" className="py-28">
       <div className="max-w-6xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={reveal}>
-          <PlaceholderImage variant={1} labelEs="FOTO: finca familiar, Mendoza" labelEn="PHOTO: family estate, Mendoza" className="h-[460px]" />
+          <PlaceholderImage variant={1} src={IMG.familia} labelEs="finca familiar, Mendoza" labelEn="family estate, Mendoza" className="h-[460px] rounded-xl" />
         </motion.div>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={reveal}>
-          <div className="text-terracota-500 text-xs tracking-[0.26em] uppercase mb-4">{t('Quiénes somos', 'Who we are')}</div>
-          <h2 className="text-3xl md:text-4xl text-espresso-900 mb-5">
+          <div className="text-ambar-500 text-xs tracking-[0.26em] uppercase mb-4">{t('Quiénes somos', 'Who we are')}</div>
+          <h2 className="text-3xl md:text-4xl text-carbon-900 mb-5">
             {t('Llevamos el sabor de nuestra tierra a cada rincón del mundo', 'We carry the flavor of our land to every corner of the world')}
           </h2>
           <p className="text-neutral-700 mb-4 leading-relaxed">
